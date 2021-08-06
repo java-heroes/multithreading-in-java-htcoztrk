@@ -11,10 +11,10 @@ public class App
 
     	//bu yontem runnable icin kullanildi
     	
-      System.out.println("Main thread is starting");
+      System.out.println("Ana thread başlıyor.");
           
-          Task task = new Task("child1");
-          Thread thread = new Thread(task);
+          OrnekTask ornekTask = new OrnekTask("CocukTask");
+          Thread thread = new Thread(ornekTask);
         
           thread.start();
           for (int i = 0; i < 10; i++) {
@@ -22,10 +22,10 @@ public class App
               try {
                   Thread.sleep(100);
               } catch (InterruptedException e) {
-                  System.out.println("Main thread is interrupted");
+                  System.out.println("Ana thread kesintiye ugradi.");
               }
           }
-          System.out.println("Main thread is terminating");
+          System.out.println("Ana thread sonlandi.");
     	
     	
       
